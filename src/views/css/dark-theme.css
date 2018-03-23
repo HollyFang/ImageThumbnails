@@ -3,8 +3,8 @@
 @import "./base.css";
 :root {
   --normal-theme: {
-    color: #000;
-    background-color: #fff;
+    color: #eee;
+    background-color: #424242;
   };
 }
 body{

@@ -78,6 +78,7 @@ function getExtention(filePath) {
 	let info = filePath.split('/');
 	let fileName = info[info.length - 1];
 	let name = fileName.split('.');
+	console.log("****" + (name.length > 1 ? '.' + name[name.length - 1] : "_"), filePath);
 	return name.length > 1 ? '.' + name[name.length - 1] : "_";
 }
 module.exports = controller;
