@@ -30,8 +30,11 @@ class App extends React.Component {
         }
     }
     showDetails(e){
-        let imgTitle=`${e.target.alt}.jpeg`;
-        let childElement=[<h3 key="title">my title is ${imgTitle}</h3>,<p key="desc">Hi, I'm the description of ${imgTitle}~</p>];
+        //debugger
+        let imgTitle=`${e.currentTarget.id.split('-')[1]}.jpeg`;
+        let childElement=[<h3 key="title">my title is ${imgTitle}</h3>,
+        <p key="desc">Hi, I'm the description of ${imgTitle}~</p>,
+        <div key="btn" className='clickable' onClick={()=>this.props.actions["changeModalVis"](false)}>OKay~</div>];
         this.props.actions["changeModalVis"](true);
         this.setState({
             title:`Details of image.`,
@@ -50,7 +53,8 @@ class App extends React.Component {
         } = this.props.data;
         let imgs=[];
         for (let i = 1; i <11;i++) {
-            imgs.push(<Thumbnail key={i} imgSrc={`thumbnails/${i}.jpeg`} imgAlt={i} 
+            imgs.push(<Thumbnail key={i} idKey={i} imgSrc={`thumbnails/${i}.jpeg`} imgAlt={i}
+                className='clickable'
                 clickEvent={this.showDetails.bind(this)} 
                 childElement={<p>{`This is ${i}`}</p>} />);
         }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './modal.css'
 class Modal extends React.Component {
 	constructor(props) {
 		super(props);
@@ -8,14 +9,16 @@ class Modal extends React.Component {
 	render() {
         const {
         	show,
-        	childElement,
-        	title
+        	childElement
         } = this.props;
-        
+
 		return (
 			<div className={"modal "+(show?"":"hidden")}>
-				<h3>{title}</h3>
-				{childElement}
+				<div className="modal-content">
+					{childElement}
+				</div>
+				<div className="modal-back">
+				</div>
 			</div>
 		);
 	}

@@ -6,15 +6,18 @@ class Thumbnail extends React.Component {
 		super(props);
 	}
 	render() {
+		//debugger
         const {
             clickEvent,
             childElement,
             imgSrc,
-            imgAlt
+            imgAlt,
+            idKey,
+            className
         } = this.props;
 		 
 		return (
-			<div className="thumbnail" onClick={clickEvent}>
+			<div id={`thumbnail-${idKey}`} className={`thumbnail ${className}`} onClick={clickEvent}>
 				<img src={imgSrc} alt={imgAlt}/>
 				{childElement}
 			</div>
