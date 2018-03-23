@@ -5,13 +5,7 @@ import App from './pages/index.jsx';
 import {
 	Provider
 } from 'react-redux'
-import {
-	createStore
-} from 'redux'
-
-import rootReducer from './reducers';
-
-const store = createStore(rootReducer);
+import store from './stores'
 
 ReactDOM.render(
 	<Provider store={store}>

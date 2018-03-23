@@ -64,7 +64,7 @@ class App extends React.Component {
                 <div className="container center">
                     {imgs}
                 </div>
-                <Modal title={title} childElement={childElement} show={modal_visibility} />
+                <Modal childElement={childElement} show={modal_visibility} />
             </div>
         )
     }
